@@ -1,0 +1,28 @@
+{
+  "name": "backend-with-chai",
+  "version": "1.0.0",
+  "description": "learning backend with Chai and Code",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thefearlesscoder/Backend-C-C.git"
+  },
+  "keywords": [
+    "thefearlesscoder",
+    "backend",
+    "javascript"
+  ],
+  "author": "Vivek Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thefearlesscoder/Backend-C-C/issues"
+  },
+  "homepage": "https://github.com/thefearlesscoder/Backend-C-C#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
