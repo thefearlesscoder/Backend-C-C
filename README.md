@@ -13,3 +13,10 @@ All backend related code, under Chai and Code learning, here.
     npm install --save-dev nodemon
 6 - merge confilicts to kam krne ke liye preittier bhi intall karemge node wala, so that all the developers 
     have the same code format. --> we install this also as a dev dependency. --> npm i -D prettier
+
+
+
+
+    db pass = Fz8fd3YHhnDIlccB
+
+    connection string:  mongodb+srv://itsvkd1:<db_password>@cluster0.0qbee.mongodb.net/
