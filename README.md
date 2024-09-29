@@ -11,4 +11,5 @@ All backend related code, under Chai and Code learning, here.
 4 - we follow module based javascript to import packages so we add -->  "type": "module", inside package.json
 5 - we install dev dependency nodemon --> isse nodemon production mein nahi jayega. --> 
     npm install --save-dev nodemon
-6 - 
+6 - merge confilicts to kam krne ke liye preittier bhi intall karemge node wala, so that all the developers 
+    have the same code format. --> we install this also as a dev dependency. --> npm i -D prettier

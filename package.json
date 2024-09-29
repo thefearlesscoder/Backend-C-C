@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/thefearlesscoder/Backend-C-C#readme",
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3"
   }
 }
