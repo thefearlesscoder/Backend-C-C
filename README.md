@@ -24,3 +24,8 @@ All backend related code, under Chai and Code learning, here.
     # Middleware
 
     All the middlewares are used as : app.use(middleware)
+
+    ## JWT 
+    is a bearer token. -> who owns the token gets the data.
+
+    
