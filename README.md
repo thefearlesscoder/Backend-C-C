@@ -20,3 +20,7 @@ All backend related code, under Chai and Code learning, here.
     db pass = Fz8fd3YHhnDIlccB
 
     connection string:  mongodb+srv://itsvkd1:<db_password>@cluster0.0qbee.mongodb.net/
+
+    # Middleware
+
+    All the middlewares are used as : app.use(middleware)
