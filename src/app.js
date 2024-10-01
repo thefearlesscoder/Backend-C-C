@@ -16,5 +16,13 @@ app.use(express.urlencoded({
 app.use(express.static("public")) // files aur forlder we want to keep in local/ acvailbe directly
 app.use(cookieParser()) // to parse cookies
 
+//routes import
+
+import userRouter from "./routes/user.routes.js" //man chahe nam se tabhi import kr sakte hain jab export default hua ho
+
+//routes declaration
+app.use("/api/v1/users", userRouter)
+
+//https://localhost:8000/api/v1/users/.....
 
 export { app };
