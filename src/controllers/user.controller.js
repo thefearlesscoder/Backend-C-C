@@ -1,6 +1,6 @@
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { ApiError } from "../utils/ApiErrors.js";
-import { User } from '../models/User.js';
+import { User } from '../models/user.model.js';
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from '../utils/ApiResponse.js';
 
@@ -15,19 +15,20 @@ const registerUser = asyncHandler(async (req, res) => {
     // check for user creation
     // return res
 
-    const { fullName, username, email, password } = req.body;
+    const { fullname, username, email, password } = req.body;
     console.log(email);
 
-    // if(fullName == ""){
+    // if(fullname == ""){
     //     throw new ApiError(400, "full name is required")
     // }
     if (
-        [fullName, email, username, password].some((field) => field?.trim() === "")
+        [fullname, email, username, password].some((field) => (typeof field === 'string' && field.trim() === "") || !field)
+
     ) {
         throw new ApiError(400, "All fields are required");
     }
 
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
         $or: [{ username }, { email }]
     })
 
@@ -35,23 +36,27 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new ApiError(409, "user already exists");
     }
 
-    const avatarLocalPath = req.files?.avatar[0]?.path;
+    const avatarLocalPath =  req.files?.avatar[0]?.path;
     const coverImageLocalPath = req.files?.coverImage[0]?.path;
 
     if (!avatarLocalPath) {
         throw new ApiError(400, "avatar is required");
     }
 
+    console.log("ABCDD")
     //upload them to cloudinary
    const avatar =  await uploadOnCloudinary(avatarLocalPath)
    const coverImage = await uploadOnCloudinary(coverImageLocalPath)
+
+   console.log("skfkdjfldf");
+   
 
    if(!avatar){
        throw new ApiError(400, "avatar is required");
    }
 
-   User.create({
-    fullName,
+   const user = await User.create({
+       fullname,
     avatar: avatar.url,
     coverImage: coverImage?.url || "" ,
     username : username.toLowerCase(),
@@ -60,7 +65,8 @@ const registerUser = asyncHandler(async (req, res) => {
    })
 
    const createdUser = await User.findById(user._id).select("-password -refreshToken");
-
+    console.log(createdUser ,"dfgfdfdg");
+ 
    if(!createdUser){
     throw new ApiError(500,"something went wrong while regidtering user");    
    }
