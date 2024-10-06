@@ -24,7 +24,7 @@
   "homepage": "https://github.com/thefearlesscoder/Backend-C-C#readme",
   "devDependencies": {
     "nodemon": "^3.1.7",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3" 
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -39,3 +39,4 @@
     "multer": "^1.4.5-lts.1"
   }
 }
+

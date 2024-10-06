@@ -14,7 +14,7 @@ app.use(express.urlencoded({
     extended: true, limit: "16kb",
 })) // for parsing from URL
 app.use(express.static("public")) // files aur forlder we want to keep in local/ acvailbe directly
-app.use(cookieParser()) // to parse cookies
+app.use(cookieParser()) // to parse cookies // this gives the "req" access of cookies
 
 //routes import
 

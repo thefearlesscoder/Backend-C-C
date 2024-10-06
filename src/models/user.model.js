@@ -79,7 +79,7 @@ userSchema.methods.generateAccessToken = function(){
 userSchema.methods.generateRefeshToken = function(){
     return jwt.sign(
         {
-            id: this._id
+            _id: this._id
         },
         process.env.REFRESH_TOKEN_SECRET, { expiresIn: process.env.REFRESH_TOKEN_EXPIRY })
 }
