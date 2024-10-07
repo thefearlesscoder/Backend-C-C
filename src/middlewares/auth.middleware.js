@@ -1,6 +1,7 @@
-import { asyncHandler } from "../utils/asyncHandler";
+import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.model.js";
+import { ApiError } from "../utils/ApiErrors.js";
 
 export const verifyJWT = asyncHandler(async (req,res,next) => {
     try { //database operation hain fali ho sakta hai isiliye try catch mein likha...
@@ -22,7 +23,7 @@ export const verifyJWT = asyncHandler(async (req,res,next) => {
         req.user = user
         next()
     } catch (error) {
-        throw new ApiError(401,error?.message || "invalid acces token");        
+        throw new ApiError(401, error?.message || "invalid acces token");        
     }
     
 })
